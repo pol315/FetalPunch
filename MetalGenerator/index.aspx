@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MetalGenerator.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MetalGenerator.index" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fetal Punch - Find your new band name</title>
+    <title id="title" runat="server">Fetal Punch - Find your new band name</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/fetalpunch.css" rel="stylesheet">
@@ -35,8 +35,8 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Fetal Punch</h1>
-                        <p class="intro-text">Looking for a new band? Trying to find a cool name for your own band? Insanely bored?<br>Click below.</p>
-                        <form runat="server">
+                        <p class="intro-text">Looking for a new band? Trying to find a cool name for your own band? Insanely bored?</p>
+                        <form runat="server">              
                             <asp:LinkButton class="btn btn-circle" runat="server" OnClick="InsertName">\m/</asp:LinkButton>
                         </form>                                                                        
                     </div>
@@ -45,32 +45,67 @@
         </div>
     </header>
 
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center">                    
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2">                                                 
                 <h2>Your Hypothetical Band</h2>
-                <div id="bandname" runat="server">
-                             
-                </div>
-                <div id="genre" runat="server">
-                             
-                </div>
-                <br />                                        
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="col-lg-4" id="spotify1" runat="server">
-
-                </div>                
-                <div class="col-lg-4" id="spotify2" runat="server">
-
+                <div class="col-lg-4">
+                      Band Name:
                 </div>
-                <div class="col-lg-4" id="spotify3" runat="server">
-
+                <div class="col-lg-4">
+                      Album Name:
                 </div>
+                <div class="col-lg-4">
+                      Genre:
+                </div>                                                                       
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-4" id="bandname" runat="server">
+                      
+                </div>
+                <div class="col-lg-4" id="album" runat="server">
+                         
+                </div>
+                <div class="col-lg-4" id="genre" runat="server">
+                         
+                </div>   
+                <br />
+                <br />
+                <br />                                                                    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-4">
+                    Spotify Artist Results:
+                </div>                
+                <div class="col-lg-4">
+                    Spotify Album Results:
+                </div>
+                <div class="col-lg-4">
+                    Spotify Track Results:
+                </div>
+            </div>
+        </div>             
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-4" id="spotify1" runat="server">
+                    
+                </div>                
+                <div class="col-lg-4" id="spotify2" runat="server">
+                    
+                </div>
+                <div class="col-lg-4" id="spotify3" runat="server">
+                    
+                </div>
+            </div>
+        </div>                        
     </section>
 
     <script src="js/jquery.js"></script>

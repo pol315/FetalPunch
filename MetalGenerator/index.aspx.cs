@@ -13,6 +13,7 @@ namespace MetalGenerator {
     public partial class index : System.Web.UI.Page {
 
         String generatedName = "";
+        String albumName = "";
         bool searchResult = false;
 
         protected void Page_Load(object sender, EventArgs e) {
@@ -27,10 +28,13 @@ namespace MetalGenerator {
         protected void InsertName(object sender, EventArgs e) {
             GenerateName();
             bandname.InnerHtml = generatedName;
+            album.InnerHtml = albumName;
             spotify1.InnerHtml = SpotifyArtist();
             spotify2.InnerHtml = SpotifyAlbum();
             spotify3.InnerHtml = SpotifyTrack();
-            genre.InnerHtml = GenerateGenre();            
+            genre.InnerHtml = GenerateGenre();
+
+            title.InnerHtml = "Fetal Punch - " + generatedName;       
         }
 
         void GenerateName() {
@@ -40,7 +44,7 @@ namespace MetalGenerator {
             List<String> verbs = new List<String>() { "ripping", "cutting", "eviscerating", "necrotizing", "rotting", "festering", "dying", "pulsing" };
             List<String> adjectives = new List<String>() { "dark", "black", "fetal", "broken", "buried", "cursed", "consumed", "rotted", "desolate", "forced", "dead", "engorged", "putrid", "aborted", "feral", "undead" };
 
-            var nameType = rnd.Next(0,4);
+            var nameType = rnd.Next(0,3);
 
             //noun noun
             if (nameType == 0) {
@@ -49,8 +53,7 @@ namespace MetalGenerator {
                 do {
                     word2 = nouns[rnd.Next(0, nouns.Count)];
                 } while (word2 == word1);
-                
-                
+                                
                 generatedName =  word1 + " " + word2;
             }
 
@@ -68,15 +71,11 @@ namespace MetalGenerator {
                 generatedName = word1 + " " + word2;
             }
 
-            //verb adjective noun
-            else if (nameType == 3) {
-                String word1 = verbs[rnd.Next(0, verbs.Count)];
-                String word2 = adjectives[rnd.Next(0, adjectives.Count)];
-                String word3 = nouns[rnd.Next(0, nouns.Count)];
-                generatedName = word1 + " " + word2 + " " + word3;
-            }
-
             
+            String albumword1 = verbs[rnd.Next(0, verbs.Count)];
+            String albumword2 = adjectives[rnd.Next(0, adjectives.Count)];
+            String albumword3 = nouns[rnd.Next(0, nouns.Count)];
+            albumName = albumword1 + " " + albumword2 + " " + albumword3;               
         }
 
         String GenerateGenre() {
