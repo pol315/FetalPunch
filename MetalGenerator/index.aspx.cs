@@ -19,6 +19,11 @@ namespace MetalGenerator {
 
         }
 
+        protected void Page_Init(object sender, EventArgs e) {
+            if (Request.RawUrl != "/")
+                Response.Redirect("/");
+        }
+
         protected void InsertName(object sender, EventArgs e) {
             GenerateName();
             bandname.InnerHtml = generatedName;
