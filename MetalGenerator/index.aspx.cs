@@ -40,9 +40,9 @@ namespace MetalGenerator {
         void GenerateName() {
             Random rnd = new Random();
 
-            List<String> nouns = new List<String>() { "goat", "wizard", "whore", "spine", "flesh", "snake", "death", "hell", "blood", "flame", "hate", "demon", "brain", "beast", "war", "zombie", "heart", "murder", "hate", "punch", "kick", "limb", "maggot", "curse", "dragon", "fetus", "plague", "stone", "cranium", "ritual", "satan", "devil", "cannibal", "corpse" };
-            List<String> verbs = new List<String>() { "ripping", "cutting", "eviscerating", "necrotizing", "rotting", "festering", "dying", "pulsing" };
-            List<String> adjectives = new List<String>() { "dark", "black", "fetal", "broken", "buried", "cursed", "consumed", "rotted", "desolate", "forced", "dead", "engorged", "putrid", "aborted", "feral", "undead" };
+            List<String> nouns = new List<String>() { "goat", "wizard", "whore", "spine", "flesh", "snake", "death", "hell", "blood", "flame", "hate", "demon", "brain", "beast", "war", "zombie", "heart", "murder", "hate", "punch", "kick", "limb", "maggot", "curse", "dragon", "fetus", "plague", "stone", "cranium", "ritual", "satan", "devil", "cannibal", "corpse", "horizon", "murder", "wolf", "slaughter", "grave", "tomb", "womb", "stench", "hatred", "god", "skull", "insect", "glass", "carcass", "eternity" };
+            List<String> verbs = new List<String>() { "ripping", "cutting", "eviscerating", "necrotizing", "rotting", "festering", "dying", "pulsing", "burning", "thrashing" };
+            List<String> adjectives = new List<String>() { "dark", "black", "fetal", "broken", "buried", "cursed", "consumed", "rotted", "rotten", "desolate", "forced", "dead", "engorged", "putrid", "aborted", "feral", "undead", "slaughtered", "eternal", "decapitated", "silent" };
 
             var nameType = rnd.Next(0,3);
 
